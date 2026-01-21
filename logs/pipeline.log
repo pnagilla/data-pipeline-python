@@ -1,0 +1,18 @@
+2026-01-21 11:31:18,752 - main - INFO - === Starting Data Pipeline ===
+2026-01-21 11:31:19,293 - main - INFO - Phase 1: Data Ingestion
+2026-01-21 11:31:19,293 - ingestion - INFO - Reading file: data/transactions.csv
+2026-01-21 11:31:19,296 - ingestion - INFO - Successfully read 7 rows from file
+2026-01-21 11:31:19,296 - ingestion - INFO - Starting data validation
+2026-01-21 11:31:19,299 - ingestion - INFO - Validation complete: 4 valid, 3 invalid
+2026-01-21 11:31:19,299 - ingestion - WARNING - Rejected row 3: {'agent_id': 'A002', 'retailer_id': 'R003', 'transaction_amount': nan, 'date': '2024-01-17'}
+2026-01-21 11:31:19,299 - ingestion - WARNING - Rejected row 4: {'agent_id': 'A003', 'retailer_id': 'R002', 'transaction_amount': 'invalid', 'date': '2024-01-18'}
+2026-01-21 11:31:19,299 - ingestion - WARNING - Rejected row 5: {'agent_id': nan, 'retailer_id': 'R001', 'transaction_amount': '500.00', 'date': '2024-01-19'}
+2026-01-21 11:31:19,299 - ingestion - INFO - Ingestion complete: 4 valid rows
+2026-01-21 11:31:19,299 - main - INFO - Phase 2: Data Processing
+2026-01-21 11:31:19,319 - main - INFO - Phase 3: Data Storage
+2026-01-21 11:31:19,319 - database - INFO - Connecting to database: sqlite:///data/pipeline.db
+2026-01-21 11:31:19,331 - database - INFO - Database connection established
+2026-01-21 11:31:19,331 - database - INFO - Starting database save...
+2026-01-21 11:31:19,345 - database - INFO - All data saved successfully
+2026-01-21 11:31:19,345 - database - INFO - Database connection closed
+2026-01-21 11:31:19,345 - main - INFO - === Pipeline Completed Successfully ===
